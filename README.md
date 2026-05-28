@@ -14,7 +14,7 @@ I recommend installing just, and run the justfile commands.
 
 ---
 
-If you consider helping me, please open a PR. I am a solo developer so maybe my responses are slow.
+If you consider helping me, please open a PR. I am a solo developer so maybe my responses are slightly delayed.
 
 If you like or think this is a great idea please star or watch this repository. That way I will also know I am not the only one!
 
