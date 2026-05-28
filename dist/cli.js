@@ -1,0 +1,6 @@
+#!/usr/bin/env node
+import e,{resolve as t}from"node:path";import n from"chalk";import{execFile as r}from"node:child_process";async function i(e){}var a={HEADING_COLOR:`#a3c6cf`,CONTRAST_COLOR:`#a3cfb2`};function o(){let e=`-`.repeat(30);return n.hex(a.HEADING_COLOR).bold(`Je: the unified developer flow
+`)+n.hex(a.CONTRAST_COLOR)(e)}function s(e){let t=e.filter(e=>!e.startsWith(`-`));return{cmds:t,opts:e.filter(e=>!t.includes(e)).map(e=>e.replace(/^-+/,``))}}var c=`.exe`;function l(t){let n=e.resolve(import.meta.dirname,`./native`),i=e.join(n,t+c);return new Promise((e,t)=>{r(i,(n,r,i)=>{if(n){let e=[n.message,i.trim()].filter(Boolean).join(`
+`);t(Error(e));return}e(r.trim())})})}async function u(e){let t=s(e);console.log(o());let n=await l(`je-cli-rs`);console.log(n),t.cmds[0]===`new`&&await i(e)}function d(...e){console.error(n.redBright(`
+An error occured:
+`)+n.bgRed.whiteBright(e.join(` `)))}var f=t(import.meta.dirname,`..`,`.env.local`);try{process.loadEnvFile(f)}catch(e){if(e.code!==`ENOENT`)throw e}u(process.argv.slice(2)).catch(e=>{d(e),process.exit(1)});export{};
